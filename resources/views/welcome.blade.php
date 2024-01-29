@@ -15,11 +15,17 @@
     <main class="container">
         <div class="row">
             @foreach ($movies as $movie)
-            <div class="col-3 px-0 card border-green mb-3">
-                <div class="card-header">{{ $movie['title']}}</div>
+            <div class="col-4 px-0 card border-green mb-3">
+                <div class="card-header">
+                    <h5 class="text-center">{{ $movie['title']}}</h5>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">Light card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">{{ $movie['original_title']}}</h5>
+                    <h6 class="card-title">{{ $movie['date']}}</h6>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text">{{ $movie['nationality']}}</p>
+                        <p class="card-text">{{ $movie['vote']}}</p>
+                    </div>
                 </div>
             </div>
             @endforeach
